@@ -1,0 +1,32 @@
+{
+  "mode": "testops",
+  "fallback": "report",
+  "testops": {
+    "project": "PS",
+    "api": {
+      "token": "QASE_PYTEST_API_TOKEN",
+      "host": "qase.io"
+    },
+    "run": {
+      "title": "Test run title"
+    },
+    "batch": {
+      "size": 100
+    }
+  },
+  "report": {
+    "driver": "local",
+    "connection": {
+      "local": {
+        "path": "./build/qase-report",
+        "format": "json"
+      }
+    }
+  },
+  "framework": {
+    "pytest": {
+      "captureLogs": true
+    }
+  },
+  "environment": "QA"
+}

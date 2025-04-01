@@ -1,0 +1,23 @@
+Команды для запуска qase-тестов в pytest'e
+
+pytest cart_page.py::TestProductCardPage.test_cart_change_different_tabs -v \
+    --qase-mode=testops \
+    --qase-testops-api-token=QASE_PYTEST_API_TOKEN \
+    --qase-testops-project=PS \
+    --qase-testops-run-id=17
+
+Тут запускается pytest c ключом -v (verbosity), а также:
+--qase-mode=testops (что означает что это testops),
+--qase-testops-api-token=QASE_PYTEST_API_TOKEN (указываю по какому токену подключиться к моему проекту),
+--qase-testops-project=PS (PS - код проекта), --qase-testops-run-id=17 (указываю id тестового прогона).
+
+
+pytest auth_test.py --collect-only (--collect-only покажет, какие тесты вообще увидел pytest — удобно для диагностики)
+
+
+--qase-mode=testops
+--qase-testops-api-token=QASE_PYTEST_API_TOKEN
+--qase-testops-project=PS
+--qase-testops-run-id=17
+            или
+--qase-testops-run-title="Playwright UI Tests" (если хотим создать тестовый прогон)

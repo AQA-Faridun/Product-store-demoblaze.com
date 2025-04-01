@@ -1,0 +1,9 @@
+.venv/
+.idea/
+.pytest_chache/
+**/.pytest_chache/
+**/.__pycache__/
+
+# Locust
+tests/locust/data/
+tests/locust/summaries/
