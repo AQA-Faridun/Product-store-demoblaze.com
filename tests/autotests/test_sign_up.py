@@ -5,13 +5,13 @@ from playwright.sync_api import Page, Dialog
 from qase.pytest import qase
 
 def get_userdata() -> dict:
-    load_dotenv(Path(__file__).resolve().parents[2] / ".env")
+    load_dotenv(".env")
     userdata: dict = json.loads(os.getenv("USERDATA"))
 
     return userdata
 
 def save_(userdata: dict):
-    env_path = Path(__file__).resolve().parents[2] / ".env"
+    env_path = ".env"
 
     load_dotenv(dotenv_path=env_path, override=True)
     existing_data = os.getenv("USERDATA")
@@ -46,7 +46,7 @@ def save_(userdata: dict):
     env_path.write_text("\n".join(new_lines) + "\n")
 
 def clear_userdata():
-    env_path = Path(__file__).resolve().parents[2] / ".env"
+    env_path = ".env"
 
     if not env_path.exists():
         raise FileNotFoundError(f".env файл не найден по пути: {env_path}")
